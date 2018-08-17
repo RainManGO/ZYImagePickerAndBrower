@@ -14,6 +14,28 @@
 		EB7E97472126BE9700EE9EBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97452126BE9700EE9EBB /* LaunchScreen.storyboard */; };
 		EB7E97522126BE9700EE9EBB /* ZYImagePickerAndBrowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E97512126BE9700EE9EBB /* ZYImagePickerAndBrowerTests.swift */; };
 		EB7E975D2126BE9700EE9EBB /* ZYImagePickerAndBrowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E975C2126BE9700EE9EBB /* ZYImagePickerAndBrowerUITests.swift */; };
+		EB7E976D2126BF3700EE9EBB /* ZYPhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E976C2126BF3700EE9EBB /* ZYPhotoDataSource.swift */; };
+		EB7E97782126BFD800EE9EBB /* icon_back_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97702126BFD800EE9EBB /* icon_back_white@2x.png */; };
+		EB7E97792126BFD800EE9EBB /* icon_back_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97712126BFD800EE9EBB /* icon_back_white@3x.png */; };
+		EB7E977A2126BFD800EE9EBB /* album_select_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97722126BFD800EE9EBB /* album_select_blue@2x.png */; };
+		EB7E977B2126BFD800EE9EBB /* album_photo_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97732126BFD800EE9EBB /* album_photo_delete@3x.png */; };
+		EB7E977C2126BFD800EE9EBB /* album_select_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97742126BFD800EE9EBB /* album_select_gray@2x.png */; };
+		EB7E977D2126BFD800EE9EBB /* album_select_blue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97752126BFD800EE9EBB /* album_select_blue@3x.png */; };
+		EB7E977E2126BFD800EE9EBB /* album_select_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97762126BFD800EE9EBB /* album_select_gray@3x.png */; };
+		EB7E977F2126BFD800EE9EBB /* album_photo_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB7E97772126BFD800EE9EBB /* album_photo_delete@2x.png */; };
+		EB7E97832126C1B300EE9EBB /* ZYCachingImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E97822126C1B300EE9EBB /* ZYCachingImageManager.swift */; };
+		EB7E97862126C24800EE9EBB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E97852126C24800EE9EBB /* Config.swift */; };
+		EB7E97882126C3CB00EE9EBB /* ZYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E97872126C3CB00EE9EBB /* ZYExtension.swift */; };
+		EB7E978A2126C49800EE9EBB /* ZYPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E97892126C49800EE9EBB /* ZYPhotoCollectionViewCell.swift */; };
+		EB7E978C2126C53300EE9EBB /* ZYPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E978B2126C53300EE9EBB /* ZYPreviewCollectionViewCell.swift */; };
+		EB7E978E2126C59F00EE9EBB /* ZYProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E978D2126C59F00EE9EBB /* ZYProgressView.swift */; };
+		EB7E97912126C6A800EE9EBB /* ZYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E97902126C6A800EE9EBB /* ZYBaseViewController.swift */; };
+		EB7E97962126C83000EE9EBB /* ZYPhotoNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E97952126C83000EE9EBB /* ZYPhotoNavigationViewController.swift */; };
+		EBEDED782126CC90001759E9 /* ZYPhotoAlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED772126CC90001759E9 /* ZYPhotoAlbumListViewController.swift */; };
+		EBEDED7A2126CD79001759E9 /* WQPhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED792126CD79001759E9 /* WQPhotoAlbumViewController.swift */; };
+		EBEDED7C2126CE3C001759E9 /* ZYPhotoClipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED7B2126CE3C001759E9 /* ZYPhotoClipViewController.swift */; };
+		EBEDED7E2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED7D2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift */; };
+		EBEDED822126CE8C001759E9 /* ZYPhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED812126CE8C001759E9 /* ZYPhotoPreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +69,28 @@
 		EB7E97582126BE9700EE9EBB /* ZYImagePickerAndBrowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZYImagePickerAndBrowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7E975C2126BE9700EE9EBB /* ZYImagePickerAndBrowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYImagePickerAndBrowerUITests.swift; sourceTree = "<group>"; };
 		EB7E975E2126BE9700EE9EBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB7E976C2126BF3700EE9EBB /* ZYPhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoDataSource.swift; sourceTree = "<group>"; };
+		EB7E97702126BFD800EE9EBB /* icon_back_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back_white@2x.png"; sourceTree = "<group>"; };
+		EB7E97712126BFD800EE9EBB /* icon_back_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back_white@3x.png"; sourceTree = "<group>"; };
+		EB7E97722126BFD800EE9EBB /* album_select_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_select_blue@2x.png"; sourceTree = "<group>"; };
+		EB7E97732126BFD800EE9EBB /* album_photo_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_photo_delete@3x.png"; sourceTree = "<group>"; };
+		EB7E97742126BFD800EE9EBB /* album_select_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_select_gray@2x.png"; sourceTree = "<group>"; };
+		EB7E97752126BFD800EE9EBB /* album_select_blue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_select_blue@3x.png"; sourceTree = "<group>"; };
+		EB7E97762126BFD800EE9EBB /* album_select_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_select_gray@3x.png"; sourceTree = "<group>"; };
+		EB7E97772126BFD800EE9EBB /* album_photo_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "album_photo_delete@2x.png"; sourceTree = "<group>"; };
+		EB7E97822126C1B300EE9EBB /* ZYCachingImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYCachingImageManager.swift; sourceTree = "<group>"; };
+		EB7E97852126C24800EE9EBB /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		EB7E97872126C3CB00EE9EBB /* ZYExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYExtension.swift; sourceTree = "<group>"; };
+		EB7E97892126C49800EE9EBB /* ZYPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EB7E978B2126C53300EE9EBB /* ZYPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		EB7E978D2126C59F00EE9EBB /* ZYProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYProgressView.swift; sourceTree = "<group>"; };
+		EB7E97902126C6A800EE9EBB /* ZYBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYBaseViewController.swift; sourceTree = "<group>"; };
+		EB7E97952126C83000EE9EBB /* ZYPhotoNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoNavigationViewController.swift; sourceTree = "<group>"; };
+		EBEDED772126CC90001759E9 /* ZYPhotoAlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoAlbumListViewController.swift; sourceTree = "<group>"; };
+		EBEDED792126CD79001759E9 /* WQPhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WQPhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		EBEDED7B2126CE3C001759E9 /* ZYPhotoClipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoClipViewController.swift; sourceTree = "<group>"; };
+		EBEDED7D2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoPreviewDeleteViewController.swift; sourceTree = "<group>"; };
+		EBEDED812126CE8C001759E9 /* ZYPhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoPreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +141,7 @@
 		EB7E973B2126BE9600EE9EBB /* ZYImagePickerAndBrower */ = {
 			isa = PBXGroup;
 			children = (
+				EB7E976A2126BE9D00EE9EBB /* ZYImagePickerAndBrowerKit */,
 				EB7E973C2126BE9600EE9EBB /* AppDelegate.swift */,
 				EB7E973E2126BE9600EE9EBB /* ViewController.swift */,
 				EB7E97402126BE9600EE9EBB /* Main.storyboard */,
@@ -123,6 +168,99 @@
 				EB7E975E2126BE9700EE9EBB /* Info.plist */,
 			);
 			path = ZYImagePickerAndBrowerUITests;
+			sourceTree = "<group>";
+		};
+		EB7E976A2126BE9D00EE9EBB /* ZYImagePickerAndBrowerKit */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E97852126C24800EE9EBB /* Config.swift */,
+				EB7E97812126BFFB00EE9EBB /* Tools */,
+				EB7E976F2126BFC200EE9EBB /* Resource */,
+				EB7E978F2126C63400EE9EBB /* Controller */,
+				EB7E97802126BFDE00EE9EBB /* View */,
+				EB7E976B2126BEC900EE9EBB /* Model */,
+			);
+			path = ZYImagePickerAndBrowerKit;
+			sourceTree = "<group>";
+		};
+		EB7E976B2126BEC900EE9EBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E976C2126BF3700EE9EBB /* ZYPhotoDataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB7E976F2126BFC200EE9EBB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E97772126BFD800EE9EBB /* album_photo_delete@2x.png */,
+				EB7E97732126BFD800EE9EBB /* album_photo_delete@3x.png */,
+				EB7E97722126BFD800EE9EBB /* album_select_blue@2x.png */,
+				EB7E97752126BFD800EE9EBB /* album_select_blue@3x.png */,
+				EB7E97742126BFD800EE9EBB /* album_select_gray@2x.png */,
+				EB7E97762126BFD800EE9EBB /* album_select_gray@3x.png */,
+				EB7E97702126BFD800EE9EBB /* icon_back_white@2x.png */,
+				EB7E97712126BFD800EE9EBB /* icon_back_white@3x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		EB7E97802126BFDE00EE9EBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E97892126C49800EE9EBB /* ZYPhotoCollectionViewCell.swift */,
+				EB7E978B2126C53300EE9EBB /* ZYPreviewCollectionViewCell.swift */,
+				EB7E978D2126C59F00EE9EBB /* ZYProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB7E97812126BFFB00EE9EBB /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E97822126C1B300EE9EBB /* ZYCachingImageManager.swift */,
+				EB7E97872126C3CB00EE9EBB /* ZYExtension.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		EB7E978F2126C63400EE9EBB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E97942126C79D00EE9EBB /* Navigation */,
+				EB7E97932126C78D00EE9EBB /* Album */,
+				EB7E97922126C78100EE9EBB /* Preview */,
+				EB7E97902126C6A800EE9EBB /* ZYBaseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EB7E97922126C78100EE9EBB /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				EBEDED7B2126CE3C001759E9 /* ZYPhotoClipViewController.swift */,
+				EBEDED7D2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift */,
+				EBEDED812126CE8C001759E9 /* ZYPhotoPreviewViewController.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		EB7E97932126C78D00EE9EBB /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				EBEDED772126CC90001759E9 /* ZYPhotoAlbumListViewController.swift */,
+				EBEDED792126CD79001759E9 /* WQPhotoAlbumViewController.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		EB7E97942126C79D00EE9EBB /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E97952126C83000EE9EBB /* ZYPhotoNavigationViewController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +367,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7E977D2126BFD800EE9EBB /* album_select_blue@3x.png in Resources */,
+				EB7E977A2126BFD800EE9EBB /* album_select_blue@2x.png in Resources */,
+				EB7E977F2126BFD800EE9EBB /* album_photo_delete@2x.png in Resources */,
+				EB7E977E2126BFD800EE9EBB /* album_select_gray@3x.png in Resources */,
+				EB7E97792126BFD800EE9EBB /* icon_back_white@3x.png in Resources */,
+				EB7E97782126BFD800EE9EBB /* icon_back_white@2x.png in Resources */,
 				EB7E97472126BE9700EE9EBB /* LaunchScreen.storyboard in Resources */,
 				EB7E97442126BE9700EE9EBB /* Assets.xcassets in Resources */,
 				EB7E97422126BE9600EE9EBB /* Main.storyboard in Resources */,
+				EB7E977B2126BFD800EE9EBB /* album_photo_delete@3x.png in Resources */,
+				EB7E977C2126BFD800EE9EBB /* album_select_gray@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +402,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7E97912126C6A800EE9EBB /* ZYBaseViewController.swift in Sources */,
+				EB7E978E2126C59F00EE9EBB /* ZYProgressView.swift in Sources */,
+				EB7E978C2126C53300EE9EBB /* ZYPreviewCollectionViewCell.swift in Sources */,
+				EB7E97882126C3CB00EE9EBB /* ZYExtension.swift in Sources */,
+				EB7E97832126C1B300EE9EBB /* ZYCachingImageManager.swift in Sources */,
 				EB7E973F2126BE9600EE9EBB /* ViewController.swift in Sources */,
+				EB7E97962126C83000EE9EBB /* ZYPhotoNavigationViewController.swift in Sources */,
+				EBEDED822126CE8C001759E9 /* ZYPhotoPreviewViewController.swift in Sources */,
+				EB7E97862126C24800EE9EBB /* Config.swift in Sources */,
+				EBEDED782126CC90001759E9 /* ZYPhotoAlbumListViewController.swift in Sources */,
+				EB7E978A2126C49800EE9EBB /* ZYPhotoCollectionViewCell.swift in Sources */,
+				EBEDED7C2126CE3C001759E9 /* ZYPhotoClipViewController.swift in Sources */,
 				EB7E973D2126BE9600EE9EBB /* AppDelegate.swift in Sources */,
+				EBEDED7E2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift in Sources */,
+				EBEDED7A2126CD79001759E9 /* WQPhotoAlbumViewController.swift in Sources */,
+				EB7E976D2126BF3700EE9EBB /* ZYPhotoDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
