@@ -8,18 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,ZYPhotoAlbumProtocol {
 
+    @IBOutlet weak var imagePickerView: ZYImagePickerLayoutView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func selectPhotoBtnClick(_ sender: UIButton) {
+        let photoAlbumVC = ZYPhotoNavigationViewController(photoAlbumDelegate: self, photoAlbumType: .selectPhoto)    //初始化需要设置代理对象
+        photoAlbumVC.maxSelectCount = 9   //最大可选择张数
+        self.navigationController?.present(photoAlbumVC, animated: true, completion: nil)
     }
-
-
+    
+    func photoAlbum(selectPhotos: [ZYPhotoModel]) {
+        imagePickerView.dataSource = selectPhotos
+        imagePickerView.numberOfLine = 4
+        imagePickerView.reloadView()
+    }
 }
 

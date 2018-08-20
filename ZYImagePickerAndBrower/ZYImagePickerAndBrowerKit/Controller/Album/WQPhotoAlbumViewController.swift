@@ -297,9 +297,23 @@ class ZYPhotoAlbumViewController: ZYBaseViewController, PHPhotoLibraryChangeObse
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ZYPhotoCollectionViewCell, self.photoData.assetArray.count > indexPath.row else {return ZYPhotoCollectionViewCell()}
         let asset = self.photoData.assetArray[indexPath.row]
-        _ = ZYCachingImageManager.default().requestThumbnailImage(for: asset) { (image: UIImage?, dictionry: Dictionary?) in
-            cell.photoImage = image ?? UIImage()
-        }
+      
+        // 新建一个默认类型的图像管理器imageManager
+        let imageManager = PHImageManager.default()
+        // 新建一个PHImageRequestOptions对象
+        let imageRequestOption = PHImageRequestOptions()
+        // PHImageRequestOptions是否有效
+        imageRequestOption.isSynchronous = true
+        // 缩略图的压缩模式设置为无
+        imageRequestOption.resizeMode = .none
+        // 缩略图的质量为快速
+        imageRequestOption.deliveryMode = .fastFormat
+        // 按照PHImageRequestOptions指定的规则取出图片
+        imageManager.requestImage(for: asset, targetSize: CGSize.init(width: 140, height: 140), contentMode: .aspectFill, options: imageRequestOption, resultHandler: {
+            (result, _) -> Void in
+            cell.photoImage = result!
+        })
+        
         if type == .selectPhoto {
             
             if selectStyle == .number {
