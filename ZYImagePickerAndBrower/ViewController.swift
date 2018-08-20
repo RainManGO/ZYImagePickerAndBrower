@@ -18,15 +18,22 @@ class ViewController: UIViewController,ZYPhotoAlbumProtocol {
     }
 
     @IBAction func selectPhotoBtnClick(_ sender: UIButton) {
-        let photoAlbumVC = ZYPhotoNavigationViewController(photoAlbumDelegate: self, photoAlbumType: .selectPhoto)    //初始化需要设置代理对象
-        photoAlbumVC.maxSelectCount = 9   //最大可选择张数
-        self.navigationController?.present(photoAlbumVC, animated: true, completion: nil)
+       goPickerController()
     }
     
     func photoAlbum(selectPhotos: [ZYPhotoModel]) {
         imagePickerView.dataSource = selectPhotos
         imagePickerView.numberOfLine = 4
         imagePickerView.reloadView()
+        imagePickerView.addCallBack = { () in
+            self.goPickerController()
+        }
+    }
+    
+    func  goPickerController() {
+        let photoAlbumVC = ZYPhotoNavigationViewController(photoAlbumDelegate: self, photoAlbumType: .selectPhoto)    //初始化需要设置代理对象
+        photoAlbumVC.maxSelectCount = 9   //最大可选择张数
+        self.navigationController?.present(photoAlbumVC, animated: true, completion: nil)
     }
 }
 

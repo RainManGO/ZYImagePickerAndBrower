@@ -26,8 +26,8 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j9-TK-f04">
-                                <rect key="frame" x="164" y="278" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="133" y="278" width="108" height="30"/>
+                                <state key="normal" title="没有加号的时候"/>
                                 <connections>
                                     <action selector="selectPhotoBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5jn-14-hjz"/>
                                 </connections>

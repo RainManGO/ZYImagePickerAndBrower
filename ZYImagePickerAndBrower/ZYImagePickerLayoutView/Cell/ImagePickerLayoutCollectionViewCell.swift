@@ -8,15 +8,17 @@
 
 import UIKit
 
+
 class ImagePickerLayoutCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
-    
+    var deleteCallBack:CallBack?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     @IBAction func deteBtnClick(_ sender: UIButton) {
+        deleteCallBack!()
     }
 }

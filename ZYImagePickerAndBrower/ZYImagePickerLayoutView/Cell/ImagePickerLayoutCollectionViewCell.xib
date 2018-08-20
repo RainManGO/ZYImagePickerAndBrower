@@ -42,7 +42,7 @@
             <connections>
                 <outlet property="imageView" destination="cLK-wR-Ufo" id="X4g-rY-Lyy"/>
             </connections>
-            <point key="canvasLocation" x="60.5" y="70"/>
+            <point key="canvasLocation" x="60" y="70"/>
         </collectionViewCell>
     </objects>
     <resources>

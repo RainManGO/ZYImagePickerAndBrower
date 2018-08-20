@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias CallBack = ()->()
+
 struct ItemSize {
     var width:CGFloat = 70
     var height:CGFloat = 70
@@ -34,9 +36,12 @@ class ZYImagePickerLayoutView: UIView {
         collectionView.dataSource = self
         //  设置 cell
         collectionView.register(UINib.init(nibName: "ImagePickerLayoutCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(UINib.init(nibName: "PlusCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PlusCollectionViewCellId")
         return collectionView
     }()
     
+    //添加回调
+    var addCallBack:CallBack?
     //image个数
     var dataSource:[ZYPhotoModel]?
     
@@ -99,6 +104,11 @@ extension ZYImagePickerLayoutView{
         itemSize = ItemSize.init(width:width , height: width, minimumInteritemSpacing: space, minimumLineSpacing: space)
         self.layoutSubviews()
         imageCollectionView.reloadData()
+        
+        //照片最大的时候，隐藏加号
+        if maxNumber == dataSource?.count {
+            hiddenPlus = true
+        }
     }
 }
 
@@ -107,16 +117,38 @@ extension ZYImagePickerLayoutView:UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return dataSource?.count ?? 0
+        if hiddenPlus == true{
+            return dataSource?.count ?? 0
+        }else{
+            return (dataSource?.count ?? 0) + 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:cellIdentifier, for: indexPath) as? ImagePickerLayoutCollectionViewCell else {
-            return UICollectionViewCell()
+        if indexPath.row >= (dataSource?.count)! {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"PlusCollectionViewCellId", for: indexPath) as? PlusCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            return cell
+        }else{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:cellIdentifier, for: indexPath) as? ImagePickerLayoutCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            cell.imageView.image = dataSource![indexPath.row].thumbnailImage
+            cell.deleteCallBack = { () in
+                self.dataSource?.remove(at: indexPath.row)
+                self.imageCollectionView.reloadData()
+            }
+            return cell
         }
-        
-        cell.imageView.image = dataSource![indexPath.row].thumbnailImage
-        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row >= (dataSource?.count)! { //加号按钮
+            addCallBack!()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
