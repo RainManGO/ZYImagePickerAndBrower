@@ -41,11 +41,7 @@ class ZYImagePickerLayoutView: UIView {
     var dataSource:[ZYPhotoModel]?
     
     //是否需要加号
-    var hiddenPlus = false {
-        didSet{
-            
-        }
-    }
+    var hiddenPlus = false
     //一行个数
     var numberOfLine = 4 {
         didSet{
@@ -110,6 +106,7 @@ extension ZYImagePickerLayoutView{
 extension ZYImagePickerLayoutView:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return dataSource?.count ?? 0
     }
     
