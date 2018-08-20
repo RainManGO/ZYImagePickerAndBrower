@@ -100,7 +100,7 @@
 		EBA3C1D7212AB50C000F0D82 /* PlusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3C1D5212AB50C000F0D82 /* PlusCollectionViewCell.swift */; };
 		EBA3C1D8212AB50C000F0D82 /* PlusCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA3C1D6212AB50C000F0D82 /* PlusCollectionViewCell.xib */; };
 		EBEDED782126CC90001759E9 /* ZYPhotoAlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED772126CC90001759E9 /* ZYPhotoAlbumListViewController.swift */; };
-		EBEDED7A2126CD79001759E9 /* WQPhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED792126CD79001759E9 /* WQPhotoAlbumViewController.swift */; };
+		EBEDED7A2126CD79001759E9 /* ZYPhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED792126CD79001759E9 /* ZYPhotoAlbumViewController.swift */; };
 		EBEDED7C2126CE3C001759E9 /* ZYPhotoClipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED7B2126CE3C001759E9 /* ZYPhotoClipViewController.swift */; };
 		EBEDED7E2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED7D2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift */; };
 		EBEDED822126CE8C001759E9 /* ZYPhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEDED812126CE8C001759E9 /* ZYPhotoPreviewViewController.swift */; };
@@ -223,7 +223,7 @@
 		EBA3C1D5212AB50C000F0D82 /* PlusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCollectionViewCell.swift; sourceTree = "<group>"; };
 		EBA3C1D6212AB50C000F0D82 /* PlusCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlusCollectionViewCell.xib; sourceTree = "<group>"; };
 		EBEDED772126CC90001759E9 /* ZYPhotoAlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoAlbumListViewController.swift; sourceTree = "<group>"; };
-		EBEDED792126CD79001759E9 /* WQPhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WQPhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		EBEDED792126CD79001759E9 /* ZYPhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoAlbumViewController.swift; sourceTree = "<group>"; };
 		EBEDED7B2126CE3C001759E9 /* ZYPhotoClipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoClipViewController.swift; sourceTree = "<group>"; };
 		EBEDED7D2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoPreviewDeleteViewController.swift; sourceTree = "<group>"; };
 		EBEDED812126CE8C001759E9 /* ZYPhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPhotoPreviewViewController.swift; sourceTree = "<group>"; };
@@ -450,7 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				EBEDED772126CC90001759E9 /* ZYPhotoAlbumListViewController.swift */,
-				EBEDED792126CD79001759E9 /* WQPhotoAlbumViewController.swift */,
+				EBEDED792126CD79001759E9 /* ZYPhotoAlbumViewController.swift */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -704,7 +704,7 @@
 				EB7E973D2126BE9600EE9EBB /* AppDelegate.swift in Sources */,
 				EBA3C1D7212AB50C000F0D82 /* PlusCollectionViewCell.swift in Sources */,
 				EBEDED7E2126CE4F001759E9 /* ZYPhotoPreviewDeleteViewController.swift in Sources */,
-				EBEDED7A2126CD79001759E9 /* WQPhotoAlbumViewController.swift in Sources */,
+				EBEDED7A2126CD79001759E9 /* ZYPhotoAlbumViewController.swift in Sources */,
 				EB7E976D2126BF3700EE9EBB /* ZYPhotoDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

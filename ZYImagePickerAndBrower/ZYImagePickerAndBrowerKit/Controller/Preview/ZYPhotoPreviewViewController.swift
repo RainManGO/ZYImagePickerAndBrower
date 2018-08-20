@@ -216,6 +216,7 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
     
     func thumbnailCollectionViewCellToggeleSelect(indexPath:IndexPath){
         currentSelectIndexPath = indexPath
+        self.collectionView(thumbnailCollectionView, didDeselectItemAt: currentSelectIndexPath)
         let cell = thumbnailCollectionView.cellForItem(at: indexPath)
         cell?.contentView.layer.borderColor = UIColor.blue.cgColor
         cell?.contentView.layer.borderWidth = 2
