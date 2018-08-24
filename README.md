@@ -29,5 +29,39 @@
 - **网络图片浏览**: 有时需要处理服务器返回网络图片
 - **快速布局UI**: 只需集成 [ZYImagePickerLayoutView](https://github.com/RainManGO/ZYImagePickerLayoutView) 可自动将照片布局
 
+
+## 使用
+
+设置主题颜色
+
+```swift 
+ZYPhotoAlbumSkinColor = UIColor.orange
+```
+
+选照片
+
+```swift 
+ let photoAlbumVC = ZYPhotoNavigationViewController(photoAlbumDelegate: self, photoAlbumType: .selectPhoto)    //初始化需要设置代理对象
+        photoAlbumVC.maxSelectCount = 9   //最大可选择张数
+        self.navigationController?.present(photoAlbumVC, animated: true, completion: nil)
+```
+
+ZYPhotoAlbumProtocol回调
+
+```swift 
+ func photoAlbum(selectPhotos: [ZYPhotoModel]) {
+        //选择的照片之后去layoutView显示
+        let imageArray = selectPhotos.map { (model) -> UIImage in
+            return model.thumbnailImage!
+        }
+        imagePickerView.dataSource = imageArray
+        imagePickerView.numberOfLine = 4
+        imagePickerView.reloadView()
+        imagePickerView.addCallBack = { () in
+            self.goPickerController()
+        }
+ }
+```
+
 ## License
 
