@@ -111,6 +111,24 @@ public class ZYPhotoNavigationViewController: UINavigationController {
         return view
     }
     
+    class func zyGetSelectNuberView(index:String) -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        view.backgroundColor = ZYPhotoAlbumSkinColor
+        view.layer.cornerRadius = 16
+        view.layer.masksToBounds = true
+        
+        let indexLabel = UILabel()
+        indexLabel.frame = view.bounds
+        indexLabel.layer.cornerRadius = 16
+        indexLabel.layer.masksToBounds = true
+        indexLabel.textColor = UIColor.white
+        indexLabel.text = index
+        indexLabel.textAlignment = .center
+        indexLabel.font = UIFont.systemFont(ofSize: 20)
+        
+        view.addSubview(indexLabel)
+        return view
+    }
 }
 
 

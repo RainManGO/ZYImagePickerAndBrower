@@ -320,7 +320,7 @@ class ZYPhotoAlbumViewController: ZYBaseViewController, PHPhotoLibraryChangeObse
                 if let Index = photoData.seletedAssetArray.index(of: asset) {
                     cell.layer.mask = nil
                     cell.selectNumber = Index
-                    cell.selectButton.asyncSetImage(UIImage.zyImageFromeBundle(named: String.init(format: "icon_%d_1", cell.selectNumber+1)), for: .selected)
+                    cell.selectButton.asyncSetImage(UIImage.zyCreateImageWithView(view: ZYPhotoNavigationViewController.zyGetSelectNuberView(index: "\(Index + 1)")), for: .selected)
                 }else{
                     cell.selectButton.isSelected = false
                     if maxSelectCount != 0, photoData.seletedAssetArray.count >= maxSelectCount
