@@ -38,16 +38,15 @@ extension UIImage {
         if let cacheImageData = ZYCachingImageManager.default().getImageMemoryCache(key: named) {
             return UIImage(data: cacheImageData, scale: UIScreen.main.scale)
         }
-//        let pathName = "/Frameworks/ZYPhotoAlbumKit.framework/\(named)"
-//        if let fullImagePath = Bundle.main.resourcePath?.appending(pathName) {
-//
-//        }
-        guard let image = UIImage(named: named) else {return nil}
-        if let imageData = UIImagePNGRepresentation(image) {
-            ZYCachingImageManager.default().setImageMemoryCache(key: named, data: imageData)
+        let pathName = "/Frameworks/ZYImagePickerAndBrower.framework/\(named)"
+        if let fullImagePath = Bundle.main.resourcePath?.appending(pathName) {
+            guard let image = UIImage.init(contentsOfFile: fullImagePath) else {return nil}
+            if let imageData = UIImagePNGRepresentation(image) {
+                ZYCachingImageManager.default().setImageMemoryCache(key: named, data: imageData)
+            }
+            return image
         }
-        return image
-//        return nil
+        return nil
     }
     
     class func zyCreateImageWithColor(color: UIColor, size: CGSize) -> UIImage? {

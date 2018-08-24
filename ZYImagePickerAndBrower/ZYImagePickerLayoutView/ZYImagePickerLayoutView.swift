@@ -8,21 +8,21 @@
 
 import UIKit
 
-typealias CallBack = ()->()
+public typealias CallBack = ()->()
 
-struct ItemSize {
+public struct ItemSize {
     var width:CGFloat = 70
     var height:CGFloat = 70
     var minimumInteritemSpacing:CGFloat = 10
     var minimumLineSpacing:CGFloat = 10
 }
 
-class ZYImagePickerLayoutView: UIView {
+public class ZYImagePickerLayoutView: UIView {
 
     let cellIdentifier = "ImagePickerLayoutCollectionViewCellId"
-    var itemSize:ItemSize!
-    var space:CGFloat = 10
-    var datasourceHeight:CGFloat = 0
+    public var itemSize:ItemSize!
+    public var space:CGFloat = 10
+    public var datasourceHeight:CGFloat = 0
     
     private lazy var imageCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -41,33 +41,33 @@ class ZYImagePickerLayoutView: UIView {
     }()
     
     //添加回调
-    var addCallBack:CallBack?
+    public var addCallBack:CallBack?
     //image个数
-    var dataSource:[ZYPhotoModel]?
-    
+    public var dataSource:[ZYPhotoModel]?
+
     //是否需要加号
-    var hiddenPlus = false
+    public var hiddenPlus = false
     //一行个数
-    var numberOfLine = 4 {
+    public var numberOfLine = 4 {
         didSet{
             
         }
     }
     //最大几个数
-    var maxNumber = 9
-    var hiddenDelete = false
+    public var maxNumber = 9
+    public var hiddenDelete = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         self.setupView()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
 //        fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
     }
@@ -77,7 +77,7 @@ class ZYImagePickerLayoutView: UIView {
 extension ZYImagePickerLayoutView{
     
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
        super.layoutSubviews()
         for constanst in  self.constraints {
             let lineNumber = ceilf(Float(CGFloat(dataSource?.count ?? 0)/CGFloat(numberOfLine)))
@@ -115,7 +115,7 @@ extension ZYImagePickerLayoutView{
 //MARK:- UICollectionViewDelegate
 extension ZYImagePickerLayoutView:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if hiddenPlus == true{
             return dataSource?.count ?? 0
@@ -124,7 +124,7 @@ extension ZYImagePickerLayoutView:UICollectionViewDelegate,UICollectionViewDataS
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row >= (dataSource?.count)! {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"PlusCollectionViewCellId", for: indexPath) as? PlusCollectionViewCell else {
                 return UICollectionViewCell()
@@ -145,21 +145,21 @@ extension ZYImagePickerLayoutView:UICollectionViewDelegate,UICollectionViewDataS
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row >= (dataSource?.count)! { //加号按钮
             addCallBack!()
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return itemSize.minimumLineSpacing
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return itemSize.minimumInteritemSpacing
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width:itemSize.width, height: itemSize.height)
     }
 }

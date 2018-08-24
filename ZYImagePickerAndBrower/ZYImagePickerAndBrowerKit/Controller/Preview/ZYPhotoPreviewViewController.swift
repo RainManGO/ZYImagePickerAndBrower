@@ -112,7 +112,7 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             var image:UIImage?
             if let selectIndex = self.photoData.seletedAssetArray.index(of: self.previewPhotoArray[currentIndex]){
                 if selectStyle == .number{
-                    image =  UIImage.init(named: String.init(format: "icon_%d_1",selectIndex + 1))
+                    image =  UIImage.zyImageFromeBundle(named: String.init(format: "icon_%d_1",selectIndex + 1))
                 }else{
                     image = ZYSelectSkinImage
                 }
@@ -194,7 +194,7 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             
             let selectIndex = self.photoData.seletedAssetArray.index(of: self.previewPhotoArray[currentIndex])
             if selectIndex != nil{
-                self.rightButton.asyncSetImage(UIImage.init(named: String.init(format: "icon_%d_1",selectIndex! + 1)), for: .selected)
+                self.rightButton.asyncSetImage(UIImage.zyImageFromeBundle(named: String.init(format: "icon_%d_1",selectIndex! + 1)), for: .selected)
             }
             
             if selectIndex != nil{
@@ -356,7 +356,7 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             }
             
             if let selectIndex = self.photoData.seletedAssetArray.index(of: self.previewPhotoArray[currentIndex]){
-                self.rightButton.asyncSetImage(UIImage.init(named: String.init(format: "icon_%d_1",selectIndex + 1)), for: .selected)
+                self.rightButton.asyncSetImage(UIImage.zyImageFromeBundle(named: String.init(format: "icon_%d_1",selectIndex + 1)), for: .selected)
                 self.rightButton.isSelected = true
                 let selectIndexPath = IndexPath.init(row: selectIndex, section: 0)
                 if isFristLoadCell == true{

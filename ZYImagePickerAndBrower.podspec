@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZYImagePickerAndBrower"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "新版微信相册选择带序号和缩略图."
 
   s.swift_version = '4.1'
@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "ZYImagePickerAndBrower/ZYImagePickerAndBrowerKit/Resource/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
