@@ -11,7 +11,7 @@ import Photos
 
 class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
-    var currentSelectIndexPath:IndexPath = IndexPath.init(row: 0, section: 0)
+    var currentSelectIndexPath:IndexPath?
     var maxSelectCount = 0
     var selectStyle:SelectStyle = .number
     var isFristLoadCell = false
@@ -112,7 +112,7 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             var image:UIImage?
             if let selectIndex = self.photoData.seletedAssetArray.index(of: self.previewPhotoArray[currentIndex]){
                 if selectStyle == .number{
-                       image = UIImage.zyCreateImageWithView(view: ZYPhotoNavigationViewController.zyGetSelectNuberView(index: "\(selectIndex + 1)"))
+                    image = UIImage.zyCreateImageWithView(view: ZYPhotoNavigationViewController.zyGetSelectNuberView(index: "\(selectIndex + 1)"))
                 }else{
                     image = ZYSelectSkinImage
                 }
@@ -194,7 +194,7 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             
             let selectIndex = self.photoData.seletedAssetArray.index(of: self.previewPhotoArray[currentIndex])
             if selectIndex != nil{
-                 self.rightButton.asyncSetImage(UIImage.zyCreateImageWithView(view: ZYPhotoNavigationViewController.zyGetSelectNuberView(index: "\(selectIndex! + 1)")), for: .selected)
+                self.rightButton.asyncSetImage(UIImage.zyCreateImageWithView(view: ZYPhotoNavigationViewController.zyGetSelectNuberView(index: "\(selectIndex! + 1)")), for: .selected)
             }
             
             if selectIndex != nil{
@@ -206,7 +206,7 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
                     let indexPath = IndexPath.init(row: selectIndex!, section: 0)
                     thumbnailCollectionView.insertItems(at: [indexPath])
                     thumbnailCollectionView.reloadItems(at: [indexPath])
-                    self.collectionView(thumbnailCollectionView, didSelectItemAt: indexPath)
+                    thumbnailCollectionViewCellToggeleSelect(indexPath: indexPath)
                 }
             }
             
@@ -215,11 +215,25 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
     }
     
     func thumbnailCollectionViewCellToggeleSelect(indexPath:IndexPath){
+        if currentSelectIndexPath != nil {
+            let befrorecell = thumbnailCollectionView.cellForItem(at: currentSelectIndexPath!)
+            befrorecell?.contentView.layer.borderColor = UIColor.clear.cgColor
+            befrorecell?.contentView.layer.borderWidth = 0
+        }
+        
         currentSelectIndexPath = indexPath
-        self.collectionView(thumbnailCollectionView, didDeselectItemAt: currentSelectIndexPath)
         let cell = thumbnailCollectionView.cellForItem(at: indexPath)
-        cell?.contentView.layer.borderColor = UIColor.blue.cgColor
+        cell?.contentView.layer.borderColor = ZYPhotoAlbumSkinColor.cgColor
         cell?.contentView.layer.borderWidth = 2
+        
+    }
+    
+    func thumbnailCollectionViewCellClearAllSelect(){
+        for index in 0...self.photoData.seletedAssetArray.count {
+            let cell = thumbnailCollectionView.cellForItem(at: IndexPath.init(row: index, section: 0))
+            cell?.contentView.layer.borderColor = UIColor.clear.cgColor
+            cell?.contentView.layer.borderWidth = 0
+        }
     }
     
     // MARK:- delegate
@@ -253,12 +267,13 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             })
             
             if isFristLoadCell == false{
-                if let selectIndex = self.photoData.seletedAssetArray.index(of: self.previewPhotoArray[currentIndex]){
-                    smallCell.contentView.layer.borderColor = UIColor.blue.cgColor
-                    smallCell.contentView.layer.borderWidth = 2
+                if let selectIndex = self.photoData.seletedAssetArray.index(of: self.previewPhotoArray[currentIndex]),selectIndex == indexPath.row{
                     fristLoadSelectIndex = selectIndex
+                    smallCell.contentView.layer.borderColor = ZYPhotoAlbumSkinColor.cgColor
+                    smallCell.contentView.layer.borderWidth = 2
+                    currentSelectIndexPath = IndexPath.init(row: selectIndex, section: 0)
+                    isFristLoadCell = true
                 }
-                isFristLoadCell = true
             }
             
             return smallCell
@@ -315,9 +330,7 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if thumbnailCollectionView == collectionView {
-            self.collectionView(thumbnailCollectionView, didDeselectItemAt: currentSelectIndexPath)
-            currentSelectIndexPath = indexPath
-            thumbnailCollectionViewCellToggeleSelect(indexPath: currentSelectIndexPath)
+            thumbnailCollectionViewCellToggeleSelect(indexPath: indexPath)
             var index = 0
             if from == 0{
                 let asset = self.photoData.seletedAssetArray[indexPath.row]
@@ -356,20 +369,19 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             }
             
             if let selectIndex = self.photoData.seletedAssetArray.index(of: self.previewPhotoArray[currentIndex]){
-               self.rightButton.asyncSetImage(UIImage.zyCreateImageWithView(view: ZYPhotoNavigationViewController.zyGetSelectNuberView(index: "\(selectIndex + 1)")), for: .selected)
+                self.rightButton.asyncSetImage(UIImage.zyCreateImageWithView(view: ZYPhotoNavigationViewController.zyGetSelectNuberView(index: "\(selectIndex + 1)")), for: .selected)
                 self.rightButton.isSelected = true
                 let selectIndexPath = IndexPath.init(row: selectIndex, section: 0)
-                if isFristLoadCell == true{
-                    self.collectionView(thumbnailCollectionView, didDeselectItemAt: IndexPath.init(row: fristLoadSelectIndex, section: 0))
-                }
-                self.collectionView(thumbnailCollectionView, didDeselectItemAt: currentSelectIndexPath)
+                thumbnailCollectionViewCellClearAllSelect()
                 thumbnailCollectionViewCellToggeleSelect(indexPath: selectIndexPath)
                 if selectIndex >= 2{
                     let offSetX:Int = selectIndex - 2
                     thumbnailCollectionView.contentOffset = CGPoint(x:offSetX * 80, y: 0)
                 }
             }else{
-                self.collectionView(thumbnailCollectionView, didDeselectItemAt: currentSelectIndexPath)
+                if currentSelectIndexPath != nil{
+                    self.collectionView(thumbnailCollectionView, didDeselectItemAt: currentSelectIndexPath!)
+                }
                 self.rightButton.isSelected = false
             }
         }
@@ -386,3 +398,4 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
     }
     
 }
+
