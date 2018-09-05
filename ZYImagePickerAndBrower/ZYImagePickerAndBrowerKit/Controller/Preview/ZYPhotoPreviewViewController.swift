@@ -377,6 +377,8 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
                 if selectIndex >= 2{
                     let offSetX:Int = selectIndex - 2
                     thumbnailCollectionView.contentOffset = CGPoint(x:offSetX * 80, y: 0)
+                }else{
+                    thumbnailCollectionView.contentOffset = CGPoint(x:0, y: 0)
                 }
             }else{
                 if currentSelectIndexPath != nil{
