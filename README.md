@@ -17,7 +17,7 @@
 
 ### CocoaPods
 
-1. Add a pod entry for ZYImagePickerAndBrower to your Podfile `pod 'ZYImagePickerAndBrower', '~> 0.6.0'`
+1. Add a pod entry for ZYImagePickerAndBrower to your Podfile `pod 'ZYImagePickerAndBrower', '~> 0.7.0'`
 2. Install the pod(s) by running `pod install`.
 
 
@@ -63,5 +63,9 @@ ZYPhotoAlbumProtocol回调
  }
 ```
 
-## License
+## 更新
+==============
 
+- **0.7.0**: 修复预览之后，导航栏不见了问题。预览最好用present方式。
+
+## License
