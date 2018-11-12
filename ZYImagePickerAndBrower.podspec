@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZYImagePickerAndBrower"
-  s.version      = "0.6.0"
+  s.version      = "0.7.0"
   s.summary      = "新版微信相册选择带序号和缩略图."
 
   s.swift_version = '4.1'

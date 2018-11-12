@@ -72,11 +72,7 @@ public class ZYBaseViewController: UIViewController {
     }
     
     @objc func backClick(button: UIButton) {
-        if self.presentationController != nil{
-            self.dismiss(animated: true, completion: nil)
-        }else{
-            self.navigationController!.popViewController(animated: true)
-        }
+        self.navigationController!.popViewController(animated: true)
     }
     
     @objc func rightButtonClick(button: UIButton) {

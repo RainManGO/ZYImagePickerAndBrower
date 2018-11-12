@@ -399,5 +399,12 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
         }
     }
     
+    override func backClick(button: UIButton) {
+        if self.presentationController != nil {
+            self.dismiss(animated: true, completion: nil)
+        }else{
+            self.navigationController!.popViewController(animated: true)
+        }
+    }
 }
 
