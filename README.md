@@ -5,6 +5,10 @@
 ![image](https://github.com/RainManGO/ZYImagePickerAndBrower/blob/master/imagePickerDemo1.gif)
 ![image](https://github.com/RainManGO/ZYImagePickerAndBrower/blob/master/imagePickerDemo2.gif)
 
+
+[demo移步](https://github.com/RainManGO/ZYimagePickerPodDemo)
+
+
 ## Requirements
 
 `ZYImagePickerAndBrower`   支持iOS8+
