@@ -104,7 +104,18 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             }
         }
     }
-    
+
+    override func backClick(button: UIButton) {
+        if self.presentedViewController != nil {
+            self.dismiss(animated: true, completion: nil)
+        }else{
+            assert(self.navigationController != nil, "外界需要modal的方式进来")
+            if self.navigationController != nil{
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+
     //  MARK:- private method
     private func initNavigation() {
         self.setBackNav()
@@ -398,13 +409,6 @@ class ZYPhotoPreviewViewController: ZYBaseViewController, UICollectionViewDelega
             }
         }
     }
-    
-    override func backClick(button: UIButton) {
-        if self.presentationController != nil {
-            self.dismiss(animated: true, completion: nil)
-        }else{
-            self.navigationController!.popViewController(animated: true)
-        }
-    }
+
 }
 
