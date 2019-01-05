@@ -71,7 +71,18 @@ public class ZYPhotoPreviewDeleteViewController: ZYBaseViewController, UICollect
         self.photoCollectionView.selectItem(at: IndexPath(item: self.currentIndex, section: 0), animated: false, scrollPosition: .left)
         self.setNavTitle(title: "\(self.currentIndex+1)/\(self.previewPhotoArray.count)")
     }
-    
+
+    override func backClick(button: UIButton) {
+        if self.presentedViewController != nil {
+            self.dismiss(animated: true, completion: nil)
+        }else{
+            assert(self.navigationController != nil, "外界需要modal的方式进来")
+            if self.navigationController != nil{
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+
     override public func didMove(toParentViewController parent: UIViewController?) {
         if parent == nil {
             UIApplication.shared.setStatusBarHidden(false, with: .none)
