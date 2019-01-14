@@ -6,8 +6,9 @@
 ![image](https://github.com/RainManGO/ZYImagePickerAndBrower/blob/master/imagePickerDemo2.gif)
 
 
+## Important(非常重要)
+这只是一个库文件地址，资源路径不正确，演示不全面。支持pod 请去demo地址查看项目细节。
 [demo移步](https://github.com/RainManGO/ZYimagePickerPodDemo)
-
 
 ## Requirements
 
