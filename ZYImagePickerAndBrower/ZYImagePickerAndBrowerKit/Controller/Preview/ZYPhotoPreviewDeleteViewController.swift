@@ -73,13 +73,10 @@ public class ZYPhotoPreviewDeleteViewController: ZYBaseViewController, UICollect
     }
 
     override func backClick(button: UIButton) {
-        if self.presentedViewController != nil {
+        if self.navigationController != nil {
             self.dismiss(animated: true, completion: nil)
         }else{
-            assert(self.navigationController != nil, "外界需要modal的方式进来")
-            if self.navigationController != nil{
-                self.navigationController?.popViewController(animated: true)
-            }
+            self.navigationController?.popViewController(animated: true)
         }
     }
 
