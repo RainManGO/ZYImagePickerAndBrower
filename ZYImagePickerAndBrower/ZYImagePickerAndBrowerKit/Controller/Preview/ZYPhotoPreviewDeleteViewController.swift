@@ -73,10 +73,10 @@ public class ZYPhotoPreviewDeleteViewController: ZYBaseViewController, UICollect
     }
 
     override func backClick(button: UIButton) {
-        if self.navigationController != nil {
-            self.dismiss(animated: true, completion: nil)
-        }else{
+        if self.navigationController != nil && self.presentedViewController == nil{
             self.navigationController?.popViewController(animated: true)
+        }else{
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
